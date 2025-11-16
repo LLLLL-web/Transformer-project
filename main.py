@@ -29,7 +29,7 @@ print(f"Using device: {device}")
 # 超参数
 EMBEDDING_DIM = 256
 LR = 0.001
-EPOCH = 1
+EPOCH = 3
 
 # 实例化模型
 ts = Transformer(
@@ -203,4 +203,5 @@ with torch.no_grad():
         true_label = "Positive" if sample_labels[i] == 1 else "Negative"
         pred_label = "Positive" if sample_preds[i] == 1 else "Negative"
         print(f"Text: {sample_texts[i][:100]}...")
+
         print(f"True: {true_label}, Predicted: {pred_label}\n")

@@ -5,7 +5,7 @@ import torch.nn.functional as F
 class Embedding(nn.Module):
     """词嵌入层，将输入的词索引映射为密集向量表示"""
     def __init__(self,vocab_size,d_model):
-        super().__init__()#必须先调用父类的方法再初始化子类自己的属性
+        super().__init__()
         self.embedding=nn.Embedding(vocab_size,d_model) # 定义词嵌入层
         self.d_model=d_model #方便查看维度		
     def forward(self,x):
@@ -254,3 +254,4 @@ class Transformer(nn.Module):
         # 分类
         x = self.classifier(x)  # [batch_size, num_classes]
         return x
+
